@@ -45,3 +45,20 @@ unsortedArray.forEach((e)=>{console.log(e)});
 const summary = (()=>console.log('Hello'))();
 summary;
 
+//Card game Shuffle
+
+let cards = ["A23456789","10","JQK"];
+let myDeck;
+myDeck = cards[0].split("")
+myDeck.push(cards[1],...cards[2].split(""));
+
+let len = myDeck.length-1;
+while(len>0){
+    let randomIndex = Math.floor(Math.random()*myDeck.length);
+    let temp = myDeck[len];
+    myDeck[len] = myDeck[randomIndex];
+    myDeck[randomIndex] = temp;
+    len--;
+}
+console.log(myDeck);
+
